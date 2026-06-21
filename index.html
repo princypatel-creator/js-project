@@ -90,9 +90,14 @@ img{
 }
 .main-form{
     width:1059px;
-    height:auto;
+    height:1032px;
     background-color:rgb(226, 226, 7);
     align-items:center;
+}
+form{
+    width:1267px;
+    height:1223px;
+   
 }
     </style>
 
@@ -123,19 +128,69 @@ img{
             <div class="form">
                 <div class="main-form">
                  <form>
-                    <label for="name" >Name:</label>
-                    <input type="text" name="name" placeholder="name" required><br>
-                    <label for="father'sname">Father/Spouse Name:</label>
-                    <input type="text" name="father'sname" placeholder="father's name or spouse"><br>
+                    <label for="names" >Name:</label>
+                    <input type="text" name="names" id="names" placeholder="name here" required><br><br>
+                    <label for="fathername">Father/Spouse Name:</label>
+                    <input type="text" id="fathername" name="fathername" placeholder="father's name or spouse" required><br><br>
                     <label for="add">Address:</label>
-                    <input type="textarea" name="add" placeholder="you can write up to 42 characters"><br>
+                    <input type="textarea" name="add" id="add" placeholder="you can write up to 42 characters" required><br><br>
                     <label for="occupy">Occupation:</label>
-                    <select name="occupy"required>
+                    <select name="occupy" id="occupy" required>
                         <option value="" disabled selected hidden>Choose an option...</option>
                         <option value="teacher">Teacher</option>
                         <option value="doctor">Doctor</option>
-                    </select>
-                    
+                        <option value="doctor">Engineer</option>
+                        <option value="doctor">Farmer</option>
+                        <option value="doctor">Household</option>
+                    </select><br><br>
+                    <label for="proof">Identity Proof:</label>
+                    <select name="proof" id="proof" required>
+                        <option value="">Choose an option</option>
+                        <option value="adharcard">Adhar Card</option>
+                        <option value="voterId">Voter Id</option>
+                        <option value="passssPort">PassPort</option>
+                        <option value="driving">Driving License</option>
+                    </select><br><br>
+                    <label for="visit">Purpose of Visit:</label>
+                    <select id="visit" name="visit" required>
+                        <option value="">Choose purpose</option>
+                        <option value="court hearing">Court Hearing</option>
+                        <option value="filing">Filing</option>
+                        <option value="personal">Personal</option>
+                        <option value="press">Press</option>
+                        <option value="tender">Tender</option>
+                        <option value="inspection">Inspection</option>
+                    </select><br><br>
+                    <label for="branch">Branch Name:</label>
+                    <select id="branch" name="branch" required>
+                        <option value="">Choose wisely</option>
+                        <option value="main buliding">Main Building</option>
+                        <option value="accounts">Accounts</option>
+                        <option value="medical">Medical</option>
+                        <option value="inspection">Inspection</option>
+                    </select><br><br>
+                    <label for="visitdate">Visit Date:</label>
+                    <input type="text" id="visitdate" name="visitname" value="7-11-2026" required readonly><br><br>
+                    <label for="gender">Gender:</label>
+                  <input type="radio" id="gender" name="gender" value="male" required>Male</input>
+                  <input type="radio" id="gender" name="gender" value="female" required>Female</input>
+                  <input type="radio" id="gender" name="gender" value="transgender" required>Both</input><br><br>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" reguired placeholder="use arrows"><br><br>
+                    <label for="phone">Mobile No.:</label>
+                    <input type="tel" name="phone" id="phone"><br><br>
+                    <label for="pass">Entry Type:</label>
+                   <select id="pass" name="pass">
+                    <option value="court">Court Room</option>
+                    <option value="journalist">Journalist</option>
+                    <option value="intern">Intern</option>
+                   </select><br><br>
+                   <label for="validdate">Valid Till:</label>
+                   <input type="text" id="validdate" name="validdate" value="07/11/2029" readonly><br><br>
+                   <label for="remark">Remark:</label>
+                   <input type="text-area" id="remark" name="remark" placeholder="write your feedback here.."><br><br>
+                    <label for="photo">Uploaded Photo:</label>
+                    <input type="file" id="photo" name="photo">
                 </form>
                 </div>
              </div>
