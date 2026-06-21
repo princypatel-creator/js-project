@@ -10,7 +10,7 @@
         }
         .container{
           
-            background-color:brown;
+           
             width:1500px;
             height:auto;
         }
@@ -64,7 +64,7 @@ img{
     width:1500px;
     height:1244px;
     background-size:contain;
-    opacity:0.5;
+    border-radius:4rem solid white;
     display:block;
     place-items: center;
     justify-content:center;
@@ -79,33 +79,92 @@ img{
     text-align:center;
 }
 .form{
-    width:1268px;
-    height:1234px;
+    width:1039px;
+    height:1105px;
   margin-top:2rem;
   display:flex;
   place-items:center;
   justify-content:center;
-    background-color:white;
+   border-radius:5rem solid white;
+      background-color: rgba(184, 28, 28, 0.2); /* Semi-transparent background is required */
+  backdrop-filter: blur(10px);    
 
 }
 .main-form{
     width:1059px;
-    height:1032px;
-    background-color:rgb(226, 226, 7);
+    height:992px;
+   
     align-items:center;
 }
 form{
     width:1267px;
     height:1223px;
-   
 }
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 1.25rem 1.3rem;
+    padding: 1.25rem;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+}
+
+.field label ,h3{
+    font-size: 1.6rem;
+    font-weight:bold;
+    margin-bottom: .35rem;
+    color:rgb(240, 233, 233);
+}
+
+.field input, .field textarea{
+    padding: .5rem;
+    width:27rem;
+    font-size: 1rem;
+    background-color:white;
+}
+.field select{
+ padding:.5rem;
+ width:28rem;
+ font-size:1rem;
+ background-color:white;
+}
+
+/* Radios group */
+.gender-options{
+   width:131px;
+   display:flex;
+   column-gap: 4px;
+}
+
+.gender-options label{
+    display:inline-flex;
+    align-items:start;
+
+    margin: 0;
+}
+    button{
+        font-size:2rem;
+        border-color:white;
+        background-color:rgb(65, 12, 12);
+        color:white;
+       margin-left:20rem;
+       margin-top:9rem;
+       
+
+    }
+   
+   
     </style>
 
 </head>
 <body>
     <div class="container">
         <nav class="nav-bar">
-            <div class="logo"><img src="court-logo.png"></div>
+            <div class="logo"><img src="court-logo.png" alt="Court logo"></div>
                 <div class="bar-list">
                 <div id="touch"><a>HOME</a></div>
                 <div class="judges-list" id="touch"><a>JUDGES</a>
@@ -128,69 +187,120 @@ form{
             <div class="form">
                 <div class="main-form">
                  <form>
-                    <label for="names" >Name:</label>
-                    <input type="text" name="names" id="names" placeholder="name here" required><br><br>
-                    <label for="fathername">Father/Spouse Name:</label>
-                    <input type="text" id="fathername" name="fathername" placeholder="father's name or spouse" required><br><br>
-                    <label for="add">Address:</label>
-                    <input type="textarea" name="add" id="add" placeholder="you can write up to 42 characters" required><br><br>
-                    <label for="occupy">Occupation:</label>
-                    <select name="occupy" id="occupy" required>
-                        <option value="" disabled selected hidden>Choose an option...</option>
-                        <option value="teacher">Teacher</option>
-                        <option value="doctor">Doctor</option>
-                        <option value="doctor">Engineer</option>
-                        <option value="doctor">Farmer</option>
-                        <option value="doctor">Household</option>
-                    </select><br><br>
-                    <label for="proof">Identity Proof:</label>
-                    <select name="proof" id="proof" required>
-                        <option value="">Choose an option</option>
-                        <option value="adharcard">Adhar Card</option>
-                        <option value="voterId">Voter Id</option>
-                        <option value="passssPort">PassPort</option>
-                        <option value="driving">Driving License</option>
-                    </select><br><br>
-                    <label for="visit">Purpose of Visit:</label>
-                    <select id="visit" name="visit" required>
-                        <option value="">Choose purpose</option>
-                        <option value="court hearing">Court Hearing</option>
-                        <option value="filing">Filing</option>
-                        <option value="personal">Personal</option>
-                        <option value="press">Press</option>
-                        <option value="tender">Tender</option>
-                        <option value="inspection">Inspection</option>
-                    </select><br><br>
-                    <label for="branch">Branch Name:</label>
-                    <select id="branch" name="branch" required>
-                        <option value="">Choose wisely</option>
-                        <option value="main buliding">Main Building</option>
-                        <option value="accounts">Accounts</option>
-                        <option value="medical">Medical</option>
-                        <option value="inspection">Inspection</option>
-                    </select><br><br>
-                    <label for="visitdate">Visit Date:</label>
-                    <input type="text" id="visitdate" name="visitname" value="7-11-2026" required readonly><br><br>
-                    <label for="gender">Gender:</label>
-                  <input type="radio" id="gender" name="gender" value="male" required>Male</input>
-                  <input type="radio" id="gender" name="gender" value="female" required>Female</input>
-                  <input type="radio" id="gender" name="gender" value="transgender" required>Both</input><br><br>
-                    <label for="age">Age:</label>
-                    <input type="number" name="age" id="age" reguired placeholder="use arrows"><br><br>
-                    <label for="phone">Mobile No.:</label>
-                    <input type="tel" name="phone" id="phone"><br><br>
-                    <label for="pass">Entry Type:</label>
-                   <select id="pass" name="pass">
-                    <option value="court">Court Room</option>
-                    <option value="journalist">Journalist</option>
-                    <option value="intern">Intern</option>
-                   </select><br><br>
-                   <label for="validdate">Valid Till:</label>
-                   <input type="text" id="validdate" name="validdate" value="07/11/2029" readonly><br><br>
-                   <label for="remark">Remark:</label>
-                   <input type="text-area" id="remark" name="remark" placeholder="write your feedback here.."><br><br>
-                    <label for="photo">Uploaded Photo:</label>
-                    <input type="file" id="photo" name="photo">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="names">Name:</label>
+                            <input type="text" name="names" id="names" placeholder="name here" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Mobile No.:</label>
+                            <input type="tel" name="phone" id="phone" >
+                        </div>
+
+                        <div class="field">
+                            <label for="fathername">Father/Spouse Name:</label>
+                            <input type="text" id="fathername" name="fathername" placeholder="father's name or spouse" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="pass">Entry Type:</label>
+                            <select id="pass" name="pass">
+                                <option value="court">Court Room</option>
+                                <option value="journalist">Journalist</option>
+                                <option value="intern">Intern</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="add">Address:</label>
+                            <textarea name="add" id="add" placeholder="you can write up to 42 characters" required rows="3"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="validdate">Valid Till:</label>
+                            <input type="text" id="validdate" name="validdate" value="07/11/2029" readonly>
+                        </div>
+
+                        <div class="field">
+                            <label for="occupy">Occupation:</label>
+                            <select name="occupy" id="occupy" required>
+                                <option value="" disabled selected hidden>Choose an option...</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="engineer">Engineer</option>
+                                <option value="farmer">Farmer</option>
+                                <option value="household">Household</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="remark">Remark:</label>
+                            <textarea id="remark" name="remark" placeholder="write your feedback here.." rows="3"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="proof">Identity Proof:</label>
+                            <select name="proof" id="proof" required>
+                                <option value="">Choose an option</option>
+                                <option value="adharcard">Adhar Card</option>
+                                <option value="voterId">Voter Id</option>
+                                <option value="passssPort">PassPort</option>
+                                <option value="driving">Driving License</option>
+                            </select>
+                        </div>
+                         <div class="field">
+                            <label for="visit">Purpose of Visit:</label>
+                            <select id="visit" name="visit" required>
+                                <option value="">Choose purpose</option>
+                                <option value="court hearing">Court Hearing</option>
+                                <option value="filing">Filing</option>
+                                <option value="personal">Personal</option>
+                                <option value="press">Press</option>
+                                <option value="tender">Tender</option>
+                                <option value="inspection">Inspection</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="visitdate">Visit Date:</label>
+                            <input type="text" id="visitdate" name="visitname" value="7-11-2026" required readonly>
+                        </div>
+
+                        <div class="field">
+                            <label for="branch">Branch Name:</label>
+                            <select id="branch" name="branch" required>
+                                <option value="">Choose wisely</option>
+                                <option value="main buliding">Main Building</option>
+                                <option value="accounts">Accounts</option>
+                                <option value="medical">Medical</option>
+                                <option value="inspection">Inspection</option>
+                            </select>
+                        </div>
+                          <div class="field">
+                            <label for="age">Age:</label>
+                            <input type="number" name="age" id="age" placeholder="use arrows">
+                        </div>
+
+                        <div class="field">
+                            <h3 for="gender">Gender:</h3>
+                            <div class="gender-options">
+                                <input type="radio" name="gender" id="gender" value="male" required><label for="gender">Male</label>
+                                <input type="radio" name="gender" id="gender" value="female" required><label for="gender">Female</label>
+                                <input type="radio" name="gender" id="gender" value="transgender" required><label for="gender">Both</label>
+                            </div>
+                        </div>
+
+                         <div class="field">
+                            <label for="photo">Uploaded Photo:</label>
+                            <input type="file" id="photo" name="photo">
+                        </div>
+                      
+
+                        <div class="save">
+                         <button type="submit">Save</button>
+                        </div>
+                    </div>
                 </form>
                 </div>
              </div>
