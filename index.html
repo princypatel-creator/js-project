@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Project</title>
+    <style>
+        body{
+            place-items:center;
+        }
+        .container{
+          
+            background-color:brown;
+            width:1500px;
+            height:auto;
+        }
+.nav-bar{
+   
+    background-size:cover;
+    display:flex;
+    width:1500px;
+    place-items:center;
+    justify-content:space-between;
+    gap:9rem;
+    height:9rem;
+}
+.logo{padding-left:2px;}
+.bar-list{
+    display:inline-flex;
+    padding-right:4rem;
+    place-items:center;
+    font-size:2rem;
+    cursor:pointer;
+    gap:10rem;
+}
+.judges-list{position:relative;}
+.list{
+    display:none;
+    position:absolute;
+    width:24rem;
+    top:100%;
+     z-index: 13;
+    background-color:white;
+    padding:3px;
+    border-radius:4px;
+    border:3px solid rgba(167, 42, 42,0.2);
+}
+.judges-list:hover .list {
+ display:block;
+}
+#touch:hover{
+    background-color: brown;
+    padding:4px;
+}
+.list-options{
+    list-style-type:none;
+    padding-left:2px;
+}
+img{
+    width:32%;
+}
+.sub-container{
+    background-image:url(court-photo.jpg);
+    width:1500px;
+    height:1244px;
+    background-size:contain;
+    opacity:0.5;
+    display:block;
+    place-items: center;
+    justify-content:center;
+}
+.details{
+    width:1500px;
+    height:3rem;
+   font-size:2rem;
+
+    color:white;
+    background-color:black;
+    text-align:center;
+}
+.form{
+    width:1268px;
+    height:1234px;
+  margin-top:2rem;
+  display:flex;
+  place-items:center;
+  justify-content:center;
+    background-color:white;
+
+}
+.main-form{
+    width:1059px;
+    height:auto;
+    background-color:rgb(226, 226, 7);
+    align-items:center;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="logo"><img src="court-logo.png"></div>
+                <div class="bar-list">
+                <div id="touch"><a>HOME</a></div>
+                <div class="judges-list" id="touch"><a>JUDGES</a>
+                <div class="list">
+                    <ul class="list-options">
+                        <li>Hon'ble Cheif Justice and Sitting Judges</li>
+                        <li>Hon'ble Judges as Chief Justice of India</li>
+                        <li>Former Hon'ble Chief Justices</li>
+                        <li>Former Hon'ble Judges</li>
+                        <li>Assets of Judges</li>
+                    </ul>
+                </div>
+            </div>
+                <div class="gate-pass" id="touch"><a>GATEPASS</a></div>
+
+            </div>
+        </nav>
+        <div class="sub-container">
+            <div class="details">PRIMARY VISITOR DETAILS</div>
+            <div class="form">
+                <div class="main-form">
+                 <form>
+                    <label for="name" >Name:</label>
+                    <input type="text" name="name" placeholder="name" required><br>
+                    <label for="father'sname">Father/Spouse Name:</label>
+                    <input type="text" name="father'sname" placeholder="father's name or spouse"><br>
+                    <label for="add">Address:</label>
+                    <input type="textarea" name="add" placeholder="you can write up to 42 characters"><br>
+                    <label for="occupy">Occupation:</label>
+                    <select name="occupy"required>
+                        <option value="" disabled selected hidden>Choose an option...</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                    
+                </form>
+                </div>
+             </div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
