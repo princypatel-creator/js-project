@@ -2,27 +2,27 @@
 window.addEventListener('DOMContentLoaded', loadFormData);
 
 
-  // --- 1. DEFINING ALL FIELDS SEPARATELY ---
+  // ---  DEFINING ALL FIELDS SEPARATELY ---
 const txtFields = {
-    'name': document.getElementById('name'),
-    'fatherSpouse': document.getElementById('fatherSpouse'),
-    'address': document.getElementById('address'),
-    'visitDate': document.getElementById('visitDate'),
+    'name': document.getElementById('names'),
+    'fathername': document.getElementById('fathername'),
+    'add': document.getElementById('add'),
+    'visitDate': document.getElementById('visitdate'),
     'age': document.getElementById('age'),
-    'mobile': document.getElementById('mobile'),
-    'validTill': document.getElementById('validTill'),
+    'phone': document.getElementById('phone'),
+    'validTill': document.getElementById('validdate'),
     'remark': document.getElementById('remark')
 };
 
 const selectFields = {
-    'entryType': document.getElementById('entryType'),
-    'occupation': document.getElementById('occupation'),
-    'identityProof': document.getElementById('identityProof'),
-    'purpose': document.getElementById('purpose'),
-    'branchName': document.getElementById('branchName')
+    'entryType': document.getElementById('pass'),
+    'occupation': document.getElementById('occupy'),
+    'identityProof': document.getElementById('proof'),
+    'purpose': document.getElementById('visit'),
+    'branchName': document.getElementById('branch')
 };
 
-// --- 2. FUNCTION: SAVE DATA ---
+// ---  FUNCTION: SAVE DATA ---
 function saveFormData() {
     // Save Text and Date Inputs
     for (const key in txtFields) {
@@ -49,7 +49,7 @@ function saveFormData() {
     alert('All individual fields saved to local storage successfully!');
 }
 
-// --- 3. FUNCTION: LOAD DATA ---
+// ---  FUNCTION: LOAD DATA ---
 function loadFormData() {
     // Load Text and Date Inputs
     for (const key in txtFields) {
@@ -82,7 +82,7 @@ function loadFormData() {
     }
 }
 
-// --- 4. FUNCTION: DELETE DATA ---
+// ---  FUNCTION: DELETE DATA ---
 function deleteFormData() {
     if (confirm('Are you sure you want to delete all saved entries?')) {
         
@@ -109,13 +109,14 @@ function deleteFormData() {
     }
 }
 
-// --- 5. EVENT LISTENERS ---
-document.getElementById('saveBtn').addEventListener('click', function(e) {
-    e.preventDefault(); 
+// --- . EVENT LISTENERS ---
+
+document.querySelector('.save-data')?.addEventListener('click', function (e) {
+    e.preventDefault();
     saveFormData();
 });
 
-document.getElementById('deleteBtn').addEventListener('click', function(e) {
+document.querySelector('.delete-data')?.addEventListener('click', function (e) {
     e.preventDefault();
     deleteFormData();
 });
