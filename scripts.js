@@ -2,7 +2,7 @@
 window.addEventListener('DOMContentLoaded', loadFormData);
 
 
-  // ---  DEFINING ALL FIELDS SEPARATELY ---
+  // ---  DEFINING ALL  INPUT FIELDS  ---
 const txtFields = {
     'name': document.getElementById('names'),
     'fathername': document.getElementById('fathername'),
@@ -13,7 +13,7 @@ const txtFields = {
     'validTill': document.getElementById('validdate'),
     'remark': document.getElementById('remark')
 };
-
+// --- DEFINING ALL THE DROPDOWN FIELDS ---
 const selectFields = {
     'entryType': document.getElementById('pass'),
     'occupation': document.getElementById('occupy'),
@@ -109,7 +109,7 @@ function deleteFormData() {
     }
 }
 
-// --- . EVENT LISTENERS ---
+// --- . EVENT LISTENERS  FOR MY BUTTOONS---
 
 document.querySelector('.save-data')?.addEventListener('click', function (e) {
     e.preventDefault();
