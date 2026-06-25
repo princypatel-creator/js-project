@@ -1,5 +1,8 @@
   // Load the data automatically when the DOM is fully loaded
-window.addEventListener('DOMContentLoaded', loadFormData);
+window.addEventListener('DOMContentLoaded', function () {
+    loadFormData();
+    renderGatePassBox();
+});
 
 
   // ---  DEFINING ALL  INPUT FIELDS  ---
@@ -80,6 +83,35 @@ function loadFormData() {
             genderRadio.checked = true;
         }
     }
+}
+
+function renderGatePassBox() {
+    const box = document.querySelector('.box');
+    if (!box) return;
+
+    const keys = [
+        { label: 'Name', key: 'name' },
+        { label: 'Father/Spouse Name', key: 'fathername' },
+        { label: 'Address', key: 'add' },
+        { label: 'Visit Date', key: 'visitDate' },
+        { label: 'Age', key: 'age' },
+        { label: 'Phone', key: 'phone' },
+        { label: 'Valid Till', key: 'validTill' },
+        { label: 'Remark', key: 'remark' },
+        { label: 'Entry Type', key: 'entryType' },
+        { label: 'Occupation', key: 'occupation' },
+        { label: 'Identity Proof', key: 'identityProof' },
+        { label: 'Purpose', key: 'purpose' },
+        { label: 'Branch Name', key: 'branchName' },
+        { label: 'Gender', key: 'gender' }
+    ];
+
+    const savedData = keys.map(({ label, key }) => {
+        const value = localStorage.getItem(key);
+        return value ? `<p><strong>${label}:</strong> ${value}</p>` : '';
+    }).filter(Boolean).join('');
+
+    box.innerHTML = savedData || '<p>No saved gate pass data available.</p>';
 }
 
 // ---  FUNCTION: DELETE DATA ---
