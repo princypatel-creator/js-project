@@ -1,75 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body{
-            place-items:center;
+        body {
+            place-items: center;
         }
-        .container{
-          padding-bottom:4rem;
-           background-color:rgb(129, 28, 28);
-            width:1500px;
-            height:auto;
+
+        .container {
+            padding-bottom: 4rem;
+            background-color: rgb(129, 28, 28);
+            width: 1500px;
+            height: auto;
         }
-.nav-bar{
-   
-    background-size:cover;
-    display:flex;
-    width:1500px;
-    place-items:center;
-    justify-content:space-between;
-    gap:9rem;
-    height:9rem;
-}
-.logo{padding-left:2px;}
-.bar-list{
-    display:inline-flex;
-    padding-right:4rem;
-    place-items:center;
-    font-size:2rem;
-    cursor:pointer;
-    gap:10rem;
-}
 
-#touch:hover{
-    background-color: brown;
-    padding:4px;
-}
-#touch a{text-decoration:none;
-color:white;}
+        .nav-bar {
 
-img{
-    width:32%;
-}
-.content{
-    width:1200px;
-    height:auto;
-    background-color:rgb(161, 114, 114);
-    margin-left:8rem;
-    margin-bottom:2.6rem;
-}
-.box{
-    text-align:center;
-    width:1198px;
-    height:auto;
-    margin-bottom:2rem;
-    padding:2px;
-    font-size:1.3rem;
-    background-color: aliceblue;
-   
-}
+            background-size: cover;
+            display: flex;
+            width: 1500px;
+            place-items: center;
+            justify-content: space-between;
+            gap: 9rem;
+            height: 9rem;
+        }
+
+        .logo {
+            padding-left: 2px;
+        }
+
+        .bar-list {
+            display: inline-flex;
+            padding-right: 4rem;
+            place-items: center;
+            font-size: 2rem;
+            cursor: pointer;
+            gap: 10rem;
+        }
+
+        #touch:hover {
+            background-color: brown;
+            padding: 4px;
+        }
+
+        #touch a {
+            text-decoration: none;
+            color: white;
+        }
+
+        img {
+            width: 32%;
+        }
+
+        .content {
+            width: 1200px;
+            height: auto;
+            background-color: rgb(161, 114, 114);
+            margin-left: 8rem;
+            margin-bottom: 2.6rem;
+        }
+
+        .box {
+            text-align: center;
+            width: 1198px;
+            height: auto;
+            margin-bottom: 2rem;
+            padding: 2px;
+            font-size: 1.3rem;
+            background-color: aliceblue;
+
+        }
+
+        .judges-list {
+            position: relative;
+        }
+
+        .list {
+            display: none;
+            position: absolute;
+            width: 24rem;
+            top: 100%;
+            z-index: 13;
+            background-color: white;
+            padding: 3px;
+            border-radius: 4px;
+            border: 3px solid rgba(167, 42, 42, 0.2);
+        }
+
+        .judges-list:hover .list {
+            display: block;
+        }
+
+        .list-options {
+            list-style-type: none;
+            padding-left: 2px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <nav class="nav-bar">
             <div class="logo"><img src="court-logo.png" alt="Court logo"></div>
-                <div class="bar-list">
+            <div class="bar-list">
                 <div id="touch"><a href="index.html">HOME</a></div>
-                <div class="judges-list" id="touch"><a>JUDGES</a></div>
+                <div class="judges-list" id="touch"><a>JUDGES</a>
+                    <div class="list">
+                        <ul class="list-options">
+                            <li>Hon'ble Cheif Justice and Sitting Judges</li>
+                            <li>Hon'ble Judges as Chief Justice of India</li>
+                            <li>Former Hon'ble Chief Justices</li>
+                            <li>Former Hon'ble Judges</li>
+                            <li>Assets of Judges</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="gate-pass" id="touch"><a href="gate-pass.html">GATEPASS</a></div>
 
             </div>
@@ -80,4 +128,5 @@ img{
     </div>
     <script src="gate-pass.js"></script>
 </body>
+
 </html>
