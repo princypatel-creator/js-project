@@ -141,7 +141,7 @@ function deleteFormData() {
     }
 }
 
-// --- . EVENT LISTENERS  FOR MY BUTTOONS---
+// --- . EVENT LISTENERS  FOR MY BUTTONS---
 
 document.querySelector('.save-data')?.addEventListener('click', function (e) {
     e.preventDefault();
