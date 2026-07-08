@@ -10,7 +10,7 @@
         }
         .container{
           
-           
+           background-color:brown;
             width:1500px;
             height:auto;
         }
@@ -137,19 +137,6 @@ form{
  background-color:white;
 }
 
-/* Radios group */
-.gender-options{
-   width:131px;
-   display:flex;
-   column-gap: 4px;
-}
-
-.gender-options label{
-    display:inline-flex;
-    align-items:start;
-
-    margin: 0;
-}
     button{
         font-size:2rem;
         border-color:white;
@@ -166,22 +153,7 @@ form{
     <div class="container">
         <nav class="nav-bar">
             <div class="logo"><img src="court-logo.png" alt="Court logo"></div>
-                <div class="bar-list">
-                <div id="touch"><a>HOME</a></div>
-                <div class="judges-list" id="touch"><a>JUDGES</a>
-                <div class="list">
-                    <ul class="list-options">
-                        <li>Hon'ble Cheif Justice and Sitting Judges</li>
-                        <li>Hon'ble Judges as Chief Justice of India</li>
-                        <li>Former Hon'ble Chief Justices</li>
-                        <li>Former Hon'ble Judges</li>
-                        <li>Assets of Judges</li>
-                    </ul>
-                </div>
-            </div>
-                <div class="gate-pass" id="touch"><a href="gate-pass.html">GATEPASS</a></div>
-
-            </div>
+              
         </nav>
         <div class="sub-container">
             <div class="details">PRIMARY VISITOR DETAILS</div>
@@ -190,8 +162,8 @@ form{
                  <form>
                     <div class="form-grid">
                         <div class="field">
-                            <label for="names">Name:</label>
-                            <input type="text" name="names" id="names" placeholder="name here" required>
+                            <label for="pname">Name:</label>
+                            <input type="text" name="pname" id="pname" placeholder="name here" required>
                         </div>
 
                         <div class="field">
@@ -216,15 +188,9 @@ form{
 
                         <div class="field">
                             <label for="add">Address:</label>
-                            <textarea name="add" id="add" placeholder="you can write up to 42 characters" rows="3"></textarea>
+                            <input name="add" id="add" placeholder="address of the person" >
                         </div>
-
-                        <div class="field">
-                            <label for="validdate">Valid Till:</label>
-                            <input type="text" id="validdate" name="validdate" value="07/11/2029" readonly>
-                        </div>
-
-                        <div class="field">
+                     <div class="field">
                             <label for="occupy">Occupation:</label>
                             <select name="occupy" id="occupy" required>
                                 <option value="" disabled selected hidden>Choose an option...</option>
@@ -236,10 +202,6 @@ form{
                             </select>
                         </div>
 
-                        <div class="field">
-                            <label for="remark">Remark:</label>
-                            <textarea id="remark" name="remark" placeholder="write your feedback here.." rows="3"></textarea>
-                        </div>
 
                         <div class="field">
                             <label for="proof">Identity Proof:</label>
@@ -266,7 +228,7 @@ form{
 
                         <div class="field">
                             <label for="visitdate">Visit Date:</label>
-                            <input type="text" id="visitdate" name="visitname" value="7-11-2026" readonly>
+                            <input type="date" id="visitdate" name="visitname" placeholder="today's date">
                         </div>
 
                         <div class="field">
@@ -281,19 +243,17 @@ form{
                         </div>
                           <div class="field">
                             <label for="age">Age:</label>
-                            <input type="number" name="age" id="age" placeholder="use arrows" required>
+                            <input type="number" name="age" id="age" placeholder="enter your age" required>
                         </div>
 
                         <div class="field">
-                            <h3>Gender:</h3>
-                            <div class="gender-options">
-                                <input type="radio" name="gender" id="male" value="male" required>
-                                <label for="male">Male</label>
-                                <input type="radio" name="gender" id="female" value="female" required>
-                                <label for="female">Female</label>
-                                <input type="radio" name="gender" id="transgender" value="transgender" required>
-                                <label for="transgender">Both</label>
-                            </div>
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected hidden>Choose gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              
+                            </select>
                         </div>
 
                          <div class="field">
@@ -303,8 +263,8 @@ form{
                       
 
                         <div class="save">
-                         <button type="submit" class="save-data">Save</button>
-                         <button type="button" class="delete-data">Delete</button>
+                         <button type="submit" class="save-data" onclick="f1()">Save</button>
+                         <button type="button" class="delete-data" onclick="f2()">Delete</button>
                         </div>
                     </div>
                 </form>
