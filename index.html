@@ -15,7 +15,7 @@
             height:auto;
         }
 .nav-bar{
-   
+   position:sticky;
     background-size:cover;
     display:flex;
     width:1500px;
@@ -90,8 +90,8 @@ img{
   place-items:center;
   justify-content:center;
    border-radius:5rem solid white;
-      background-color: rgba(184, 28, 28, 0.2); /* Semi-transparent background is required */
-  backdrop-filter: blur(10px);    
+  background-color: rgba(184, 28, 28, 0.2); /* Semi-transparent background is required */
+     
 
 }
 .main-form{
@@ -158,6 +158,7 @@ form{
       margin-left:6rem;
       margin-top:3rem;
         }
+  
     </style>
 
 </head>
@@ -186,26 +187,26 @@ form{
             <div class="details">PRIMARY VISITOR DETAILS</div>
             <div class="form">
                 <div class="main-form">
-                 <form onsubmit="myfun(event)">
+                 <form>
                     <div class="form-grid">
                         <div class="field">
                             <label for="names">Name:</label>
-                            <input type="text" name="names" id="names" placeholder="name here">
+                            <input type="text" name="names" id="names" placeholder="name here" required>
                         </div>
 
                         <div class="field">
                             <label for="phone">Mobile No.:</label>
-                            <input type="tel" name="phone" id="phone" >
+                            <input type="tel" name="phone" id="phone" inputmode="numeric" required>
                         </div>
 
                         <div class="field">
                             <label for="fathername">Father/Spouse Name:</label>
-                            <input type="text" id="fathername" name="fathername" placeholder="father's name or spouse">
+                            <input type="text" id="fathername" name="fathername" required placeholder="father's name or spouse">
                         </div>
 
                         <div class="field">
                             <label for="pass">Entry Type:</label>
-                            <select id="pass" name="pass">
+                            <select id="pass" name="pass" required>
                                 <option value="">Choose your entry</option>
                                 <option value="court">Court Room</option>
                                 <option value="journalist">Journalist</option>
@@ -225,7 +226,7 @@ form{
 
                         <div class="field">
                             <label for="occupy">Occupation:</label>
-                            <select name="occupy" id="occupy">
+                            <select name="occupy" id="occupy" required>
                                 <option value="" disabled selected hidden>Choose an option...</option>
                                 <option value="teacher">Teacher</option>
                                 <option value="doctor">Doctor</option>
@@ -242,7 +243,7 @@ form{
 
                         <div class="field">
                             <label for="proof">Identity Proof:</label>
-                            <select name="proof" id="proof">
+                            <select name="proof" id="proof" required>
                                 <option value="" disabled selected hidden>Choose an option</option>
                                 <option value="adharcard">Adhar Card</option>
                                 <option value="voterId">Voter Id</option>
@@ -252,7 +253,7 @@ form{
                         </div>
                          <div class="field">
                             <label for="visit">Purpose of Visit:</label>
-                            <select id="visit" name="visit">
+                            <select id="visit" name="visit" required>
                                 <option value="" disabled selected hidden>Choose purpose</option>
                                 <option value="court hearing">Court Hearing</option>
                                 <option value="filing">Filing</option>
@@ -270,7 +271,7 @@ form{
 
                         <div class="field">
                             <label for="branch">Branch Name:</label>
-                            <select id="branch" name="branch">
+                            <select id="branch" name="branch" required>
                                 <option value="" disabled selected hidden>Choose wisely</option>
                                 <option value="main buliding">Main Building</option>
                                 <option value="accounts">Accounts</option>
@@ -280,15 +281,18 @@ form{
                         </div>
                           <div class="field">
                             <label for="age">Age:</label>
-                            <input type="number" name="age" id="age" placeholder="use arrows">
+                            <input type="number" name="age" id="age" placeholder="use arrows" required>
                         </div>
 
                         <div class="field">
-                            <h3 for="gender">Gender:</h3>
+                            <h3>Gender:</h3>
                             <div class="gender-options">
-                                <input type="radio" name="gender" id="gender" value="male" required><label for="gender">Male</label>
-                                <input type="radio" name="gender" id="gender" value="female" required><label for="gender">Female</label>
-                                <input type="radio" name="gender" id="gender" value="transgender" required><label for="gender">Both</label>
+                                <input type="radio" name="gender" id="male" value="male" required>
+                                <label for="male">Male</label>
+                                <input type="radio" name="gender" id="female" value="female" required>
+                                <label for="female">Female</label>
+                                <input type="radio" name="gender" id="transgender" value="transgender" required>
+                                <label for="transgender">Both</label>
                             </div>
                         </div>
 
@@ -300,7 +304,7 @@ form{
 
                         <div class="save">
                          <button type="submit" class="save-data">Save</button>
-                         <button type="delete" class="delete-data">Delete</button>
+                         <button type="button" class="delete-data">Delete</button>
                         </div>
                     </div>
                 </form>

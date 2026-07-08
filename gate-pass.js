@@ -1,6 +1,6 @@
   // Load the data automatically when the DOM is fully loaded
 window.addEventListener('DOMContentLoaded', function () {
-    loadFormData();
+    resetForm();
     renderGatePassBox();
 });
 
@@ -52,39 +52,29 @@ function saveFormData() {
     alert('All individual fields saved to local storage successfully!');
 }
 
-// ---  FUNCTION: LOAD DATA ---
-function loadFormData() {
-    // Load Text and Date Inputs
+// ---  FUNCTION: RESET FORM ---
+function resetForm() {
     for (const key in txtFields) {
         if (txtFields[key]) {
-            const savedValue = localStorage.getItem(key);
-            if (savedValue !== null) {
-                txtFields[key].value = savedValue;
+            const field = txtFields[key];
+            if (!field.readOnly) {
+                field.value = '';
             }
         }
     }
 
-    // Load Select Dropdowns
     for (const key in selectFields) {
         if (selectFields[key]) {
-            const savedValue = localStorage.getItem(key);
-            if (savedValue !== null) {
-                selectFields[key].value = savedValue;
-            }
+            selectFields[key].selectedIndex = 0;
         }
     }
 
-    // Load Gender Radio Buttons
-    const savedGender = localStorage.getItem('gender');
-    if (savedGender) {
-        // Find the radio button that matches the saved value (e.g., "Male", "Female", "Both")
-        const genderRadio = document.querySelector(`input[name="gender"][value="${savedGender}"]`);
-        if (genderRadio) {
-            genderRadio.checked = true;
-        }
+    const checkedGender = document.querySelector('input[name="gender"]:checked');
+    if (checkedGender) {
+        checkedGender.checked = false;
     }
 }
-
+//--- function to return the saved data of the users in the box ---
 function renderGatePassBox() {
     const box = document.querySelector('.box');
     if (!box) return;
@@ -143,8 +133,14 @@ function deleteFormData() {
 
 // --- . EVENT LISTENERS  FOR MY BUTTONS---
 
-document.querySelector('.save-data')?.addEventListener('click', function (e) {
+document.querySelector('form')?.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+    }
+
     saveFormData();
 });
 
