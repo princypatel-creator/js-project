@@ -7,22 +7,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // ---  DEFINING ALL  INPUT FIELDS  ---
 const txtFields = {
-    'name': document.getElementById('names'),
-    'fathername': document.getElementById('fathername'),
-    'add': document.getElementById('add'),
-    'visitDate': document.getElementById('visitdate'),
-    'age': document.getElementById('age'),
-    'phone': document.getElementById('phone'),
-    'validTill': document.getElementById('validdate'),
-    'remark': document.getElementById('remark')
+    'Name': document.getElementById('names'),
+    'FatherName': document.getElementById('fathername'),
+    'Add': document.getElementById('add'),
+    'VisitDate': document.getElementById('visitdate'),
+    'Age': document.getElementById('age'),
+    'Phone': document.getElementById('phone'),
+    'ValidTill': document.getElementById('validdate'),
+    'Remark': document.getElementById('remark')
 };
 // --- DEFINING ALL THE DROPDOWN FIELDS ---
 const selectFields = {
-    'entryType': document.getElementById('pass'),
-    'occupation': document.getElementById('occupy'),
-    'identityProof': document.getElementById('proof'),
-    'purpose': document.getElementById('visit'),
-    'branchName': document.getElementById('branch')
+    'EntryType': document.getElementById('pass'),
+    'Occupation': document.getElementById('occupy'),
+    'IdentityProof': document.getElementById('proof'),
+    'Purpose': document.getElementById('visit'),
+    'BranchName': document.getElementById('branch')
 };
 
 // ---  FUNCTION: SAVE DATA ---
@@ -80,20 +80,20 @@ function renderGatePassBox() {
     if (!box) return;
 
     const keys = [
-        { label: 'Name', key: 'name' },
-        { label: 'Father/Spouse Name', key: 'fathername' },
-        { label: 'Address', key: 'add' },
-        { label: 'Visit Date', key: 'visitDate' },
-        { label: 'Age', key: 'age' },
-        { label: 'Phone', key: 'phone' },
-        { label: 'Valid Till', key: 'validTill' },
-        { label: 'Remark', key: 'remark' },
-        { label: 'Entry Type', key: 'entryType' },
-        { label: 'Occupation', key: 'occupation' },
-        { label: 'Identity Proof', key: 'identityProof' },
-        { label: 'Purpose', key: 'purpose' },
-        { label: 'Branch Name', key: 'branchName' },
-        { label: 'Gender', key: 'gender' }
+        { label: 'Name', key: 'Name' },
+        { label: 'Father/Spouse Name', key: 'FatherName' },
+        { label: 'Address', key: 'Add' },
+        { label: 'Visit Date', key: 'VisitDate' },
+        { label: 'Age', key: 'Age' },
+        { label: 'Phone', key: 'Phone' },
+        { label: 'Valid Till', key: 'ValidTill' },
+        { label: 'Remark', key: 'Remark' },
+        { label: 'Entry Type', key: 'EntryType' },
+        { label: 'Occupation', key: 'Occupation' },
+        { label: 'Identity Proof', key: 'IdentityProof' },
+        { label: 'Purpose', key: 'Purpose' },
+        { label: 'Branch Name', key: 'BranchName' },
+        { label: 'Gender', key: 'Gender' }
     ];
 
     const savedData = keys.map(({ label, key }) => {
